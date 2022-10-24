@@ -39,7 +39,7 @@ app.get('/productos', (req, res) => {
     })
 })
 app.get('/register', (req, res) => {
-    res.render('nuevoproducto')
+    res.render('register')
 })
 app.post('/producto', (req, res) => {
     crearProducto(req.body).then(result =>{
