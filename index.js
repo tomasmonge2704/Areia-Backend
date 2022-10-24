@@ -35,6 +35,16 @@ app.get('/', (req, res) => {
 })
 app.get('/productos', (req, res) => {
     listarALL().then(result => {
+        result = result.sort(function (a, b) {
+            if (a.nombre > b.nombre) {
+              return 1;
+            }
+            if (a.nombre < b.nombre) {
+              return -1;
+            }
+            // a must be equal to b
+            return 0;
+          })
         res.send(result)
     })
 })

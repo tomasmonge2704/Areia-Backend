@@ -14,7 +14,16 @@ async function listarALL() {
     await conectDB()
     try {
         const productos = await Producto.find({}).lean();
-         return productos.sort()
+         return productos.sort(function (a, b) {
+            if (a.categoria > b.categoria) {
+              return 1;
+            }
+            if (a.categoria < b.categoria) {
+              return -1;
+            }
+            // a must be equal to b
+            return 0;
+          })
     } catch (error) {
       return undefined;
     }
