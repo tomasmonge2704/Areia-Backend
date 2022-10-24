@@ -25,10 +25,9 @@ async function crearProducto(elem) {
           return e;
 }
 async function actualizarProducto(elem,id) {
-    let productoUpdate = await Producto.updateOne(
-        { id_: id },
-        { $set: elem }
-      );
+    await conectDB()
+    let productoUpdate = await new Producto(elem).save();
+      await Producto.deleteOne({ _id: id });
       return productoUpdate;
 }
 async function borrarProducto(id) {

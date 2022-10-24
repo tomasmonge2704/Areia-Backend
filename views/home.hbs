@@ -53,7 +53,17 @@
         </div>
         <div class="form-group">
           <label for="name"><b>Ingrese la Categoria</b></label>
-          <input id="categoria" value="" class="form-control" type="text" name="categoria">
+          <select class="custom-select" id="categoria" name="categoria">
+            <option selected>Seleccionar una categoria</option>
+            <option value="ASADOS-adicionales">ASADOS-adicionales</option>
+            <option value="ASADOS-postres">ASADOS-postres</option>
+            <option value="ASADOS-cervezas">ASADOS-cervezas</option>
+            <option value="ASADOS-combos bebidas">ASADOS-combos bebidas</option>
+            <option value="ASADOS-vinos">ASADOS-vinos</option>
+            <option value="ALLIN-combos">ALLIN-combos</option>
+           <option value="ALLIN-bottles">ALLIN-bottles</option>
+            <option value="ALLIN-mixers">ALLIN-mixers</option>
+            </select>
         </div>
         <div class="form-group">
           <label for="name"><b>Ingrese la descripción</b></label>
@@ -156,6 +166,7 @@ setTimeout(
   {
 $( "#alert" ).removeClass( "show" );
   }, 3000);
+  location.reload();
 })
 .catch((err)=>{
     console.log(err)
