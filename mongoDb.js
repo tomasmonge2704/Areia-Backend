@@ -14,7 +14,7 @@ async function listarALL() {
     await conectDB()
     try {
         const productos = await Producto.find({}).lean();
-         return productos
+         return productos.sort()
     } catch (error) {
       return undefined;
     }
