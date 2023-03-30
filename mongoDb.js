@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-const url = 'mongodb+srv://tomas22:1roZJIVtj5JnG5HH@cluster0.cycnd1i.mongodb.net/?retryWrites=true&w=majority'
+const url = process.env.MONGO_DB;
 const Producto = mongoose.model('Productos', new mongoose.Schema({ nombre: String, precio: Number,descripcion:String,categoria:String }));
 //conectar a la BDD
 const connectionParams = {

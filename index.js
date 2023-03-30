@@ -1,4 +1,5 @@
 import express from 'express'
+import {} from 'dotenv/config'
 import config from './config.js';
 import exphbs from 'express-handlebars'
 import path from 'path';
